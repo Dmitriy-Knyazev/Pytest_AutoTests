@@ -1,2 +1,2 @@
 # Pytest_AutoTests
-Python + Pytest + Selenium + Requests
+Python + Pytest + Selenium + Requests + Allure
