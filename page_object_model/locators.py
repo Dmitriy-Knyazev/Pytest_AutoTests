@@ -14,3 +14,6 @@ class Login_page_locators:
 class Main_page_locators:
 
     SEE_PRODUCTS_TEXT = (By.XPATH, '//*[text()="Products"]')
+    TWITTER = (By.XPATH, '//*[text()="Twitter"]')
+    FACEBOOK = (By.XPATH, '//*[text()="Facebook"]')
+    LINKEDIN = (By.XPATH, '//*[text()="LinkedIn"]')
