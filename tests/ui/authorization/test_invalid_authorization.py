@@ -2,6 +2,7 @@ from page_object_model.constants import *
 from page_object_model.base import Base_methods
 from page_object_model.locators import *
 from selenium.webdriver import Keys
+import pytest
 
 
 """Невалидная Авторизация на saucedemo.com"""
@@ -9,6 +10,7 @@ class Test_invalid_authorization:
 
 
     """Невалидная Авторизация на saucedemo.com"""
+    @pytest.mark.ui_saucedemo
     def test_invalid_authorization(self, our_driver, setup):
         driver = setup
         Base_methods.get_element(our_driver, Login_page_locators.USERNAME_FIELD).\

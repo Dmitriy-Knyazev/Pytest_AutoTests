@@ -1,7 +1,9 @@
+import pytest
 from page_object_model.base import Base_methods
 
 
 """Тестирование api Chuck Norris https://api.chucknorris.io"""
+@pytest.mark.api_chuck_norris
 class Test_api_chuck_norris:
 
     categories = ["animal", "career", "celebrity", "dev", "explicit",

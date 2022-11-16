@@ -1,12 +1,14 @@
 from page_object_model.constants import *
 from page_object_model.base import Base_methods
 from page_object_model.locators import *
+import pytest
 
 
 class Test_check_social_networks:
 
 
     """Проверка ссылок социальных сетей"""
+    @pytest.mark.ui_saucedemo
     def test_check_social_networks(self, our_driver, setup):
         driver = our_driver
         Base_methods.authorization_in_account(our_driver, setup, User_constants.STANDARD_USER)
