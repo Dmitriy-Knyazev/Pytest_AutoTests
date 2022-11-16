@@ -47,8 +47,8 @@ class Base_methods:
 
     """GET ЗАПРОС"""
     @staticmethod
-    def api_get(url, headers : None):                    #Проверить работу None
-        response = requests.get(url, headers=headers)
+    def api_get(url):
+        response = requests.get(url)
         Base_methods.check_status_code(response, 200)
         return response
 
@@ -58,6 +58,22 @@ class Base_methods:
     def check_json_params(response, expected_value):
         json_data = json.loads(response.text)
         assert list(json_data) == expected_value
+
+
+    '''Метод для проверки в API, наличие слов в значениях параметров'''
+    @staticmethod
+    def check_json_words_in_value(response, parameter, word_or_words):
+        check_info = response.json()
+        check_value = check_info.get(parameter)
+        assert word_or_words in check_value, f'Слово {word_or_words} отсутствует в {check_value}'
+
+
+    '''Метод API, проверка значения параметра'''
+    @staticmethod
+    def check_value_in_parameter(response, parameter, expected_value):
+        check_info = response.json()
+        check_value = check_info.get(parameter)
+        assert expected_value == check_value, f'Ожидаемое значение {expected_value} не равно явному {check_value}'
 
 
     """Разлогиниться"""
