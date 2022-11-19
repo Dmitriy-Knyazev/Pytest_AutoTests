@@ -3,13 +3,16 @@ from page_object_model.base import Base_methods
 from page_object_model.pages_locators.locators_saucedemo_com import *
 from selenium.webdriver import Keys
 import pytest
+import allure
 
 
 """Невалидная Авторизация на saucedemo.com"""
+@allure.feature('saucedemo.com')
 class Test_invalid_authorization:
 
 
     """Невалидная Авторизация на saucedemo.com"""
+    @allure.title('Невалидная Авторизация')
     @pytest.mark.ui_saucedemo
     def test_invalid_authorization(self, our_driver, setup):
         driver = setup

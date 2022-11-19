@@ -3,12 +3,15 @@ from page_object_model.base import Base_methods
 from page_object_model.pages_locators.locators_saucedemo_com import *
 from page_object_model.pages_methods.saucedemo_com.login_page_methods import Login_page_methods
 import pytest
+import allure
 
 
+@allure.feature('saucedemo.com')
 class Test_check_social_networks:
 
 
     """Проверка ссылок социальных сетей"""
+    @allure.title('Проверка социальных сетей')
     @pytest.mark.ui_saucedemo
     def test_check_social_networks(self, our_driver, setup):
         driver = our_driver
