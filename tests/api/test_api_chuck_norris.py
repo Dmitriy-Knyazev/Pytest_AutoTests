@@ -1,8 +1,10 @@
 import pytest
 from page_object_model.base import Base_methods
+import allure
 
 
 """Тестирование api Chuck Norris https://api.chucknorris.io"""
+@allure.feature('API_Chuck_Norris')
 @pytest.mark.api_chuck_norris
 class Test_api_chuck_norris:
 
@@ -14,6 +16,8 @@ class Test_api_chuck_norris:
 
 
     """Проверка случайной шутки"""
+    @allure.story('Тест случайной шутки')
+    @allure.severity('normal')
     def test_api_random_jokes(self):
         random_jokes = 'https://api.chucknorris.io/jokes/random'
         response = Base_methods.api_get(random_jokes)
@@ -22,6 +26,8 @@ class Test_api_chuck_norris:
 
 
     """Проверка списка категорий"""
+    @allure.story('Тест списка категорий')
+    @allure.severity('normal')
     def test_api_check_list_categories(self):
         categories_url = 'https://api.chucknorris.io/jokes/categories'
         response = Base_methods.api_get(categories_url)
@@ -29,6 +35,8 @@ class Test_api_chuck_norris:
 
 
     """Проверка GET запросов со всеми категориями"""
+    @allure.story('Тест всех категорий')
+    @allure.severity('normal')
     @pytest.mark.xfail(reason='Иногда Тест падает, не всегда в ответе есть имя "Chuck Norris"')
     def test_api_check_value_categories(self):
         for our_categories in Test_api_chuck_norris.categories:
@@ -40,6 +48,8 @@ class Test_api_chuck_norris:
 
 
     """Проверка наличие числа ответов со словом 'bitch'"""
+    @allure.story('Тест ответов со словом "bitch"')
+    @allure.severity('trivial')
     def test_api_check_value_with_word(self):
         sub_url = 'https://api.chucknorris.io/jokes/search?query='
         our_word = 'bitch'
@@ -49,6 +59,8 @@ class Test_api_chuck_norris:
 
 
     """Один Тест с маркером parametrize"""
+    @allure.story('Тест всех категорий')
+    @allure.severity('normal')
     @pytest.mark.parametrize('categories', [
         "animal", "career", "celebrity", "dev", "explicit",
         "fashion", "food", "history", "money", "movie", "music",
