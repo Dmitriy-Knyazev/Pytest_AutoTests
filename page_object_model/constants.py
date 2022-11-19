@@ -1,5 +1,5 @@
-"""Список тестовых Пользователей"""
-class User_constants:
+"""Список тестовых Пользователей saucedemo.com"""
+class User_constants_saucedemo_com:
 
     STANDARD_USER = {'user_name': 'standard_user', 'password': 'secret_sauce'}
     LOCKED_USER = {'user_name': 'locked_out_user', 'password': 'secret_sauce'}

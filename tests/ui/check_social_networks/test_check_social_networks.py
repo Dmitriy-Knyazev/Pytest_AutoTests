@@ -1,6 +1,7 @@
 from page_object_model.constants import *
 from page_object_model.base import Base_methods
 from page_object_model.pages_locators.locators_saucedemo_com import *
+from page_object_model.pages_methods.saucedemo_com.login_page_methods import Login_page_methods
 import pytest
 
 
@@ -11,7 +12,7 @@ class Test_check_social_networks:
     @pytest.mark.ui_saucedemo
     def test_check_social_networks(self, our_driver, setup):
         driver = our_driver
-        Base_methods.authorization_in_account(our_driver, setup, User_constants.STANDARD_USER)
+        Login_page_methods.authorization_in_account(our_driver, setup, User_constants_saucedemo_com.STANDARD_USER)
         social_networks_and_locators = {
         'twitter': Main_page_locators.TWITTER,
         'facebook': Main_page_locators.FACEBOOK,
