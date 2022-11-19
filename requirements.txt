@@ -3,6 +3,7 @@ selenium==4.6.0
 requests==2.28.1
 jsonschema==4.17.0
 pydantic==1.10.2
+pytest-rerunfailures==10.2
 
 #requirements.txt - список внешних зависимостей/библиотек.
 #pip3 install -r requirements.txt - установка.
