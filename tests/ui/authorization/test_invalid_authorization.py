@@ -1,6 +1,6 @@
 from page_object_model.constants import *
 from page_object_model.base import Base_methods
-from page_object_model.locators import *
+from page_object_model.pages_locators.locators_saucedemo_com import *
 from selenium.webdriver import Keys
 import pytest
 

@@ -1,5 +1,5 @@
 import json
-from page_object_model.locators import *
+from page_object_model.pages_locators.locators_saucedemo_com import *
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver import Keys
